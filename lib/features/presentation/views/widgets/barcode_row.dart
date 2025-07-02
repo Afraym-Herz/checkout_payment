@@ -7,16 +7,17 @@ class BarcodeRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Image.asset("assets/images/iconCarrier.png"),
-        const Spacer(),
+        
         GestureDetector(
           child: Container(
             width: 113,
             height: 58,
 
             decoration: BoxDecoration(
-              color: const Color(0xffD9D9D0),
+              color: const Color(0xffEDEDED),
               borderRadius: BorderRadius.circular(15),
               border: Border.all(color: const Color(0xff34A853)),
             ),

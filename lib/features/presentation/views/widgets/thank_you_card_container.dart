@@ -12,7 +12,7 @@ class ThankYouCardContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: const Color(0xffD9D9D0),
+        color: const Color(0xffEDEDED),
       ),
       child: Padding(
         padding: const EdgeInsets.only(top: 66, left: 20, right: 20),
@@ -52,8 +52,9 @@ class ThankYouCardContainer extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             const CardInfoWidget(),
-            const SizedBox(height: 85 ),
-            const BarcodeRow() ,
+            const Spacer() ,
+            const BarcodeRow(),
+            SizedBox(height: (MediaQuery.of(context).size.height * .2 / 2) -29 ,),
           ],
         ),
       ),
