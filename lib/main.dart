@@ -20,3 +20,4 @@ class MyApp extends StatelessWidget {
 
 // paymentIntentObject create paymentIntent ( amount , currency )
 // init paymentSheet(paymentIntentClinetSecret)
+// present payment sheet
