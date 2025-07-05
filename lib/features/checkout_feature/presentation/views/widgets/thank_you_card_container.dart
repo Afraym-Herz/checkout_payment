@@ -1,7 +1,7 @@
 import 'package:checkout_payment/core/utils/styles.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/barcode_row.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/card_info_widget.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/order_info_item.dart';
+import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/barcode_row.dart';
+import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/card_info_widget.dart';
+import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/order_info_item.dart';
 import 'package:flutter/material.dart';
 
 class ThankYouCardContainer extends StatelessWidget {
@@ -52,9 +52,11 @@ class ThankYouCardContainer extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             const CardInfoWidget(),
-            const Spacer() ,
+            const Spacer(),
             const BarcodeRow(),
-            SizedBox(height: (MediaQuery.of(context).size.height * .2 / 2) -29 ,),
+            SizedBox(
+              height: (MediaQuery.of(context).size.height * .2 / 2) - 29,
+            ),
           ],
         ),
       ),

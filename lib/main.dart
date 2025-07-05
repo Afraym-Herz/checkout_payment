@@ -1,4 +1,4 @@
-import 'package:checkout_payment/features/presentation/views/my_cart_view.dart';
+import 'package:checkout_payment/features/checkout_feature/presentation/views/my_cart_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
-      home: MyCartView() ,
+      home: MyCartView(),
     );
   }
 }
+
+// paymentIntentObject create paymentIntent ( amount , currency )
+// init paymentSheet(paymentIntentClinetSecret)

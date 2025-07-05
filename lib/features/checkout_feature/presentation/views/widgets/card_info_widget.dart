@@ -1,11 +1,8 @@
-
 import 'package:checkout_payment/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CardInfoWidget extends StatelessWidget {
-  const CardInfoWidget({
-    super.key,
-  });
+  const CardInfoWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 class CheckCirculeAvatar extends StatelessWidget {
-  const CheckCirculeAvatar({
-    super.key,
-  });
+  const CheckCirculeAvatar({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
-import 'package:checkout_payment/features/presentation/views/widgets/customAppBar.dart';
-import 'package:checkout_payment/features/presentation/views/widgets/payment_view_body.dart';
+import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/customAppBar.dart';
+import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/payment_view_body.dart';
 import 'package:flutter/material.dart';
 
 class PaymentView extends StatelessWidget {

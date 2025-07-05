@@ -10,7 +10,7 @@ class BarcodeRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Image.asset("assets/images/iconCarrier.png"),
-        
+
         GestureDetector(
           child: Container(
             width: 113,

@@ -11,7 +11,7 @@ class PaymentGatewayItem extends StatelessWidget {
   final bool isActive;
   @override
   Widget build(BuildContext context) {
-    return  AnimatedContainer(
+    return AnimatedContainer(
       margin: const EdgeInsets.symmetric(horizontal: 17),
       duration: const Duration(milliseconds: 300),
       width: 103,
@@ -20,7 +20,9 @@ class PaymentGatewayItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           side: BorderSide(
             width: 1.50,
-            color: isActive == true ? const Color(0xff34A853) : const Color.fromARGB(69, 180, 180, 183),
+            color: isActive == true
+                ? const Color(0xff34A853)
+                : const Color.fromARGB(69, 180, 180, 183),
           ),
           borderRadius: BorderRadius.circular(16),
         ),
@@ -29,7 +31,9 @@ class PaymentGatewayItem extends StatelessWidget {
             blurRadius: 4,
             offset: const Offset(0, 0),
             spreadRadius: 0,
-            color: isActive == true ? const Color(0xff34A853) : const Color.fromARGB(69, 180, 180, 183),
+            color: isActive == true
+                ? const Color(0xff34A853)
+                : const Color.fromARGB(69, 180, 180, 183),
           ),
         ],
       ),
