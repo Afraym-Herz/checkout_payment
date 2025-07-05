@@ -21,3 +21,15 @@ class MyApp extends StatelessWidget {
 // paymentIntentObject create paymentIntent ( amount , currency )
 // init paymentSheet(paymentIntentClinetSecret)
 // present payment sheet
+
+
+// create request in post man 
+
+/*  
+1 - add url of request after word "Post" 
+2 - add inputs like (amount , currency) in body section
+3 - add secret key in Authorization field 
+4 - NOTE : set token as bearer token and body as x-www-form 
+
+*/
+
