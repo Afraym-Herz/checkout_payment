@@ -50,7 +50,7 @@ class ThankYouCardContainer extends StatelessWidget {
               subTitle: r"$50.97",
               subTitleStyle: Styles.style24,
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 15),
             const CardInfoWidget(),
             const Spacer(),
             const BarcodeRow(),

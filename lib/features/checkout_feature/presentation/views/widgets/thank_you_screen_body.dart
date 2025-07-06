@@ -1,8 +1,5 @@
-import 'package:checkout_payment/core/utils/styles.dart';
-import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/barcode_row.dart';
 import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/check_circule_avatar.dart';
 import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/custom_dashs_list.dart';
-import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/order_info_item.dart';
 import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/thank_you_card_container.dart';
 import 'package:flutter/material.dart';
 

@@ -11,7 +11,7 @@ class CheckoutRepoImpl extends CheckoutRepo {
   }) async {
     try {
       final StripeServices stripeServices = StripeServices();
-      stripeServices.makePayment(
+      await stripeServices.makePayment(
         paymentIntentModelInput: paymentIntentModelInput,
       );
       return right(null);
