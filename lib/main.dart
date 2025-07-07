@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
 void main() {
-
-  Stripe.publishableKey = ApiKeys.publishKey ;
+  Stripe.publishableKey = ApiKeys.publishKey;
 
   runApp(const MyApp());
 }
@@ -27,8 +26,7 @@ class MyApp extends StatelessWidget {
 // init paymentSheet(paymentIntentClinetSecret)
 // present payment sheet
 
-
-// create request in post man 
+// create request in post man
 
 /*  
 1 - add url of request after word "Post" 
@@ -38,3 +36,14 @@ class MyApp extends StatelessWidget {
 
 */
 
+/* if we want to autofill infos of old customer
+
+** customerId get by request customer 
+
+  1 - paymentIntentObject create paymentIntent ( amount , currency , customerId )    
+  2 - keySecret createEmpheralKey (customerId , stripeVersion)
+  3 - init paymentSheet(paymentIntentClinetSecret)
+  4 - present payment sheet
+
+
+ */

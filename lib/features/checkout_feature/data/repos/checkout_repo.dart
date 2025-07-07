@@ -3,8 +3,7 @@ import 'package:checkout_payment/features/checkout_feature/data/models/payment_i
 import 'package:dartz/dartz.dart';
 
 abstract class CheckoutRepo {
- 
- Future<Either<Faliure, void>> makePayment ({required PaymentIntentModelInput paymentIntentModelInput}) ;
-
-  
+  Future<Either<Faliure, void>> makePayment({
+    required PaymentIntentModelInput paymentIntentModelInput,
+  });
 }

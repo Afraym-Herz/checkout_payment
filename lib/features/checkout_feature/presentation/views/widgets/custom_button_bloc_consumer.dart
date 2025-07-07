@@ -17,12 +17,11 @@ class CustomButtonBlocConsumer extends StatelessWidget {
     return BlocConsumer<StripePaymentCubit, StripePaymentState>(
       listener: (context, state) {
         if (state is StripePaymentSuccess) {
-           Navigator.of(context).pushReplacement(
+          Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => const ThankYouScreen()),
           );
         }
         if (state is StripePaymentFailure) {
-          
           Navigator.of(context).pop();
           final snackBar = SnackBar(content: Text(state.errMessage));
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -39,6 +38,8 @@ class CustomButtonBlocConsumer extends StatelessWidget {
                 amount: "100",
                 currency: "USD",
               ),
+
+            
             );
           },
         );

@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 
 class ApiServices {
-    final Dio dio = Dio();
+  final Dio dio = Dio();
 
-  Future<Response> post ({
+  Future<Response> post({
     required String url,
     required body,
     required String token,
@@ -17,6 +17,6 @@ class ApiServices {
         headers: {"Authorization": "Bearer $token"},
       ),
     );
-    return response ;
+    return response;
   }
 }

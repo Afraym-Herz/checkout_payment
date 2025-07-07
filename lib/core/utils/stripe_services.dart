@@ -13,31 +13,34 @@ class StripeServices {
   ) async {
     var response = await apiServices.post(
       url: "https://api.stripe.com/v1/payment_intents",
-      body: paymentIntentModelInput.toJson() ,
+      body: paymentIntentModelInput.toJson(),
       token: ApiKeys.secretKey,
-      contentType: Headers.formUrlEncodedContentType ,
+      contentType: Headers.formUrlEncodedContentType,
     );
 
     return PaymentIntentModel.fromJson(response.data);
   }
 
-  Future initPaymentSheet ({required String paymentIntentClientSecret}) async {
-    await Stripe.instance.initPaymentSheet(paymentSheetParameters: SetupPaymentSheetParameters(
-      paymentIntentClientSecret: paymentIntentClientSecret ,
-      merchantDisplayName: "Afraym Herz" ,
-    ));
+  Future initPaymentSheet({required String paymentIntentClientSecret}) async {
+    await Stripe.instance.initPaymentSheet(
+      paymentSheetParameters: SetupPaymentSheetParameters(
+        paymentIntentClientSecret: paymentIntentClientSecret,
+        merchantDisplayName: "Afraym Herz",
+      ),
+    );
   }
 
-  Future displayPaymentSheet () async {
-    await Stripe.instance.presentPaymentSheet() ;
+  Future displayPaymentSheet() async {
+    await Stripe.instance.presentPaymentSheet();
   }
 
-  Future makePayment ({required PaymentIntentModelInput paymentIntentModelInput}) async {
-    
+  Future makePayment({
+    required PaymentIntentModelInput paymentIntentModelInput,
+  }) async {
     var paymentIntentModel = await createPaymentIntent(paymentIntentModelInput);
-    await initPaymentSheet(paymentIntentClientSecret: paymentIntentModel.clientSecret! );
-    await displayPaymentSheet() ;
-    
+    await initPaymentSheet(
+      paymentIntentClientSecret: paymentIntentModel.clientSecret!,
+    );
+    await displayPaymentSheet();
   }
-
 }
