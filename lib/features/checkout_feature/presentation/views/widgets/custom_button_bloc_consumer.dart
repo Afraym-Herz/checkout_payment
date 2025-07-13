@@ -37,9 +37,8 @@ class CustomButtonBlocConsumer extends StatelessWidget {
               paymentIntentModelInput: PaymentIntentModelInput(
                 amount: "100",
                 currency: "USD",
+                customerId: 'cus_SfoscSeKHu9cPI',
               ),
-
-            
             );
           },
         );
