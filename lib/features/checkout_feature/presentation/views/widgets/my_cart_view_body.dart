@@ -61,7 +61,8 @@ class MyCartViewBody extends StatelessWidget {
             title: 'Complete Payment',
             onTap: () {
               //  Navigator.of(context).push( MaterialPageRoute(builder: (context) {return const PaymentView();}),);
-              Navigator.of(context).push(MaterialPageRoute(
+              Navigator.of(context).push(
+                MaterialPageRoute(
                   builder: (BuildContext context) => PaypalCheckoutView(
                     sandboxMode: true,
                     clientId: "",
@@ -74,29 +75,28 @@ class MyCartViewBody extends StatelessWidget {
                           "details": {
                             "subtotal": "70",
                             "shipping": "0",
-                            "shipping_discount": 0
-                          }
+                            "shipping_discount": 0,
+                          },
                         },
                         "description": "The payment transaction description.",
 
                         "item_list": {
-                        
                           "items": [
                             {
                               "name": "Apple",
                               "quantity": 4,
                               "price": "5",
-                              "currency": "USD"
+                              "currency": "USD",
                             },
                             {
                               "name": "Pineapple",
                               "quantity": 5,
                               "price": "10",
-                              "currency": "USD"
-                            }
+                              "currency": "USD",
+                            },
                           ],
-                        }
-                      }
+                        },
+                      },
                     ],
                     note: "Contact us for any questions on your order.",
                     onSuccess: (Map params) async {
@@ -110,7 +110,8 @@ class MyCartViewBody extends StatelessWidget {
                       print('cancelled:');
                     },
                   ),
-                ));
+                ),
+              );
             },
           ),
           const SizedBox(height: 35),
