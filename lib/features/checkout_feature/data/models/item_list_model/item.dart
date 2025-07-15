@@ -1,12 +1,12 @@
-class Item {
+class OrderModel {
   String? name;
   int? quantity;
   String? price;
   String? currency;
 
-  Item({this.name, this.quantity, this.price, this.currency});
+  OrderModel({this.name, this.quantity, this.price, this.currency});
 
-  factory Item.fromJson(Map<String, dynamic> json) => Item(
+  factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
     name: json['name'] as String?,
     quantity: json['quantity'] as int?,
     price: json['price'] as String?,

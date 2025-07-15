@@ -2,7 +2,9 @@ import 'package:checkout_payment/features/checkout_feature/presentation/views/wi
 import 'package:flutter/material.dart';
 
 class PaymentGatewayList extends StatefulWidget {
-  const PaymentGatewayList({super.key});
+  const PaymentGatewayList({super.key, required this.updatePaymentGateway });
+
+  final Function ({required int activeIndex}) updatePaymentGateway ;
 
   @override
   State<PaymentGatewayList> createState() => _PaymentGatewayListState();
@@ -14,8 +16,8 @@ class _PaymentGatewayListState extends State<PaymentGatewayList> {
     'assets/images/paypalImage.png',
     'assets/images/applePay.png',
   ];
+  int activeIndex = 0 ;
 
-  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,8 @@ class _PaymentGatewayListState extends State<PaymentGatewayList> {
                 setState(() {
                   activeIndex = index;
                 });
+                widget.updatePaymentGateway(activeIndex: activeIndex) ;
+
               }
             },
             child: PaymentGatewayItem(
