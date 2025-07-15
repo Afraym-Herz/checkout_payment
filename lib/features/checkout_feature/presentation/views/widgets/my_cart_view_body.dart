@@ -6,6 +6,7 @@ import 'package:checkout_payment/features/checkout_feature/presentation/views/wi
 import 'package:checkout_payment/features/checkout_feature/presentation/views/widgets/payment_gateway_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 
 class MyCartViewBody extends StatelessWidget {
   const MyCartViewBody({super.key});
@@ -60,15 +61,56 @@ class MyCartViewBody extends StatelessWidget {
             title: 'Complete Payment',
             onTap: () {
               //  Navigator.of(context).push( MaterialPageRoute(builder: (context) {return const PaymentView();}),);
-              showModalBottomSheet(
-                context: context,
-                builder: (context) {
-                  return BlocProvider(
-                    create: (context) => StripePaymentCubit(CheckoutRepoImpl()),
-                    child: const PaymentGatewayMethodsBottomSheet(),
-                  );
-                },
-              );
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => PaypalCheckoutView(
+                    sandboxMode: true,
+                    clientId: "",
+                    secretKey: "",
+                    transactions: const [
+                      {
+                        "amount": {
+                          "total": "70",
+                          "currency": "USD",
+                          "details": {
+                            "subtotal": "70",
+                            "shipping": "0",
+                            "shipping_discount": 0
+                          }
+                        },
+                        "description": "The payment transaction description.",
+
+                        "item_list": {
+                        
+                          "items": [
+                            {
+                              "name": "Apple",
+                              "quantity": 4,
+                              "price": "5",
+                              "currency": "USD"
+                            },
+                            {
+                              "name": "Pineapple",
+                              "quantity": 5,
+                              "price": "10",
+                              "currency": "USD"
+                            }
+                          ],
+                        }
+                      }
+                    ],
+                    note: "Contact us for any questions on your order.",
+                    onSuccess: (Map params) async {
+                      print("onSuccess: $params");
+                    },
+                    onError: (error) {
+                      print("onError: $error");
+                      Navigator.pop(context);
+                    },
+                    onCancel: () {
+                      print('cancelled:');
+                    },
+                  ),
+                ));
             },
           ),
           const SizedBox(height: 35),
